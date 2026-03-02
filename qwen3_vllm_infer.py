@@ -55,8 +55,8 @@ def worker(
     engine_args = EngineArgs(
         model=model_dir,
         max_model_len=32768,
-        max_num_seqs=5,
-        limit_mm_per_prompt={"image": 50},
+        max_num_seqs=8,
+        limit_mm_per_prompt={"image": 1},
     )
     engine_args = asdict(engine_args) | {"seed": 0}
 
