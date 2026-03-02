@@ -102,20 +102,20 @@ from conv_for_infer import generate_conv
 
 # Load the model
 model = Qwen3VLForConditionalGeneration.from_pretrained(
-    "FireRedTeam/FireRed-OCR-2B",
+    "FireRedTeam/FireRed-OCR",
     torch_dtype=torch.bfloat16,
     device_map="auto",
 )
 
 # We recommend enabling flash_attention_2 for better acceleration and memory saving, especially in multi-image and video scenarios.
 # model = Qwen3VLForConditionalGeneration.from_pretrained(
-#     "Qwen/FireRed-OCR-2B,
+#     "Qwen/FireRed-OCR,
 #     dtype=torch.bfloat16,
 #     attn_implementation="flash_attention_2",
 #     device_map="auto",
 # )
 
-processor = AutoProcessor.from_pretrained("FireRedTeam/FireRed-OCR-2B")
+processor = AutoProcessor.from_pretrained("FireRedTeam/FireRed-OCR")
 
 # Prepare Input
 image_path = "./examples/complex_table.png"
